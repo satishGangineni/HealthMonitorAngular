@@ -1,0 +1,220 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <ng-template #content let-c="close" let-d="dismiss">
+                    <div class="modal-header" style="background-color: rgba(0, 0, 0, 0.9);">
+                      <h4 class="modal-title text-white">{{ title }}</h4>
+                      <button type="button " class="close" aria-label="Close" (click)="d('Cross click')">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                        <ngb-tabset>
+                            <ngb-tab>
+                              <ng-template ngbTabTitle><b>Request Headers</b></ng-template>
+                              <ng-template ngbTabContent>
+                                <div class="m-l-10 m-t-10">
+                                <p>GET /URI/123456789</p>
+                                
+                                <p>Client</p>
+                                    <p>Accept: */*</p>
+                                    <p>Accept-Encoding: gzip</p>
+                                    <p>Accept-Language: en-US,en;q=0.9</p>
+                                  </div>
+                              </ng-template>
+                            </ngb-tab>
+                            <ngb-tab>
+                                <ng-template ngbTabTitle><b>Response Header</b></ng-template>
+                                <ng-template ngbTabContent>
+                                    <p class="m-l-10 m-t-10">HTTP/1.1 503 Service Unavailable</p>
+                                </ng-template>
+                              </ngb-tab>
+                          </ngb-tabset>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-danger" (click)="c('Close click')">Close</button>
+                    </div>
+                  </ng-template>
+                <ngb-tabset>
+                  <ngb-tab>
+                    <ng-template ngbTabTitle><b>Services health monitor</b></ng-template>
+                    <ng-template ngbTabContent>
+                        <div class="row p-t-20">
+                            <div class="col-3 ">
+                                <div class="card mb-3 border" style="max-width: 18rem;">
+                                    <div class="card-header text-white bg-success">Smartflow<i class="ti-reload float-right m-t-5"></i></div>
+                                    <div class="card-body">
+                                      <h5 class="card-title text-success"><i class="fa fa-check-circle m-r-5 m-l-5"></i> Online</h5>
+                                      <p class="card-text "><a href="#"  (click)="open(content, 'Smartflow')" >View more details</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="card mb-3 border" style="max-width: 18rem;">
+                                    <div class="card-header text-white bg-warning">MAH 360</div>
+                                    <div class="card-body">
+                                      <h5 class="card-title text-warning"><i class="fa fa-exclamation-circle m-r-5 m-l-5"></i> Processing</h5>
+                                      <p class="card-text "><a href="#" (click)="open(content, 'MAH 360')">View more details</a></p>
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="card border mb-3" style="max-width: 18rem;">
+                                    <div class="card-header text-white bg-danger">AMS 360<i class="ti-reload float-right m-t-5"></i></div>
+                                    <div class="card-body">
+                                      <h5 class="card-title text-danger"><i class="fa fa-times-circle m-r-5 m-l-5"></i> Offline</h5>
+                                      <p class="card-text ">
+                                        <a href="#" (click)="open(content, 'MAH 360')" >View more details</a>
+                                        <i class="fa fa-envelope float-right m-t-5"></i>
+                                      </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="card mb-3 border" style="max-width: 18rem;">
+                                    <div class="card-header text-white bg-danger">PL Rating<i class="ti-reload float-right m-t-5"></i></div>
+                                    <div class="card-body">
+                                      <h5 class="card-title text-danger"><i class="fa fa-times-circle m-r-5 m-l-5"></i> Offline</h5>
+                                      <p class="card-text "><a href="#" (click)="open(content, 'PL Rating')">View more details</a><i class="fa fa-envelope float-right m-t-5"></i></p>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                          <div class="row p-t-20">
+                              <div class="col-3">
+                                  <div class="card mb-3 border" style="max-width: 18rem;">
+                                      <div class="card-header text-white bg-danger ">Platform Shared Services<i class="ti-reload float-right m-t-5"></i></div>
+                                      <div class="card-body">
+                                        <h5 class="card-title text-danger "><i class="fa fa-times-circle m-r-5 m-l-5"></i> Offline</h5>
+                                        <p class="card-text "><a href="#" (click)="open(content, 'Platform Shared Services')" >View more details</a><i class="fa fa-envelope float-right m-t-5"></i></p>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="col-3">
+                                  <div class="card mb-3 border" style="max-width: 18rem;">
+                                      <div class="card-header text-white bg-success ">Smarflow DB<i class="ti-reload float-right m-t-5"></i></div>
+                                      <div class="card-body">
+                                        <h5 class="card-title text-success "><i class="fa fa-check-circle m-r-5 m-l-5"></i> Online</h5>
+                                        <p class="card-text "><a href="#" (click)="open(content, 'Smartflow DB')">View more details</a></p>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="col-3">
+                                  <div class="card mb-3 border" style="max-width: 18rem;">
+                                      <div class="card-header text-white bg-warning">Nextgen Rating</div>
+                                      <div class="card-body">
+                                        <h5 class="card-title text-warning"><i class="fa fa-exclamation-circle m-r-5 m-l-5"></i> Processing</h5>
+                                        <p class="card-text "><a href="#" (click)="open(content, 'Nextgen Rating')">View more details</a></p>
+                                      </div>
+                                    </div>
+                              </div>
+                              <div class="col-3">
+                                  <div class="card mb-3 border" style="max-width: 18rem;">
+                                      <div class="card-header text-white bg-success">Platform Image Services<i class="ti-reload float-right m-t-5"></i></div>
+                                      <div class="card-body">
+                                        <h5 class="card-title text-success"><i class="fa fa-check-circle m-r-5 m-l-5"></i> Online</h5>
+                                        <p class="card-text "><a href="#" (click)="open(content, 'Platform Image Services')" >View more details</a></p>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="row p-t-20">
+                              <div class="col-3">
+                                  <div class="card mb-3 border" style="max-width: 18rem;">
+                                      <div class="card-header text-white bg-success">File Upload Services<i class="ti-reload float-right m-t-5"></i></div>
+                                      <div class="card-body">
+                                        <h5 class="card-title text-success"><i class="fa fa-check-circle m-r-5 m-l-5"></i> Online</h5>
+                                        <p class="card-text "><a href="#" (click)="open(content, 'File Upload Services')">View more details</a></p>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="col-3">
+                                  <div class="card mb-3 border" style="max-width: 18rem;">
+                                      <div class="card-header text-white bg-success">Vertafore Single Sign On <i class="ti-reload float-right m-t-5"></i></div>
+                                      <div class="card-body">
+                                        <h5 class="card-title text-success"><i class="fa fa-check-circle m-r-5 m-l-5"></i> Online</h5>
+                                        <p class="card-text "><a href="#" (click)="open(content, 'Vertafore Single Sign On')">View more details</a></p>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                    </ng-template>
+                  </ngb-tab>
+                  <ngb-tab>
+                    <ng-template ngbTabTitle><b>Certificates health monitor</b></ng-template>
+                    <ng-template ngbTabContent>
+                        <div class="row p-t-20">
+                            <div class="col-3">
+                                <div class="card mb-3 border" style="max-width: 18rem;">
+                                    <div class="card-header text-white bg-success">MAH<i class="ti-reload float-right m-t-5"></i></div>
+                                    <div class="card-body">
+                                      <h5 class="card-title text-success"><i class="fa fa-check-circle m-r-5 m-l-5"></i> Valid</h5>
+                                      <p class="card-text ">Date: 09/11/2021 <a class="float-right" href="#" (click)="open(content, 'MAH')">View more</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="card mb-3 border" style="max-width: 18rem;">
+                                    <div class="card-header text-white bg-warning">Platform Integration<i class="ti-reload float-right m-t-5"></i></div>
+                                    <div class="card-body">
+                                      <h5 class="card-title text-warning"><i class="fa fa-exclamation-circle m-r-5 m-l-5"></i>Warning</h5>
+                                      <p class="card-text ">Date: 10/11/2019 <a class="float-right" href="#" (click)="open(content, 'Platform Integration')">View more</a></p>
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="card mb-3 border" style="max-width: 18rem;">
+                                    <div class="card-header text-white bg-success">Worksmart<i class="ti-reload float-right m-t-5"></i></div>
+                                    <div class="card-body">
+                                      <h5 class="card-title text-success"><i class="fa fa-check-circle m-r-5 m-l-5"></i> Valid</h5>
+                                      <p class="card-text ">Date: 09/11/2021 <a class="float-right" href="#" (click)="open(content, 'Worksmart')">View more</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="card mb-3 border" style="max-width: 18rem;">
+                                    <div class="card-header text-white bg-danger">Smartflow<i class="ti-reload float-right m-t-5"></i></div>
+                                    <div class="card-body">
+                                      <h5 class="card-title text-danger"><i class="fa fa-times-circle m-r-5 m-l-5"></i>Expired</h5>
+                                      <p class="card-text ">Date: 08/11/2019 
+                                        <i class="fa fa-envelope float-right m-t-5"></i>
+                                        <a class="float-right m-r-5" href="#" (click)="open(content, 'Smartflow')">View more</a>
+                                      </p>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                          <div class="row p-t-20">
+                              <div class="col-3">
+                                  <div class="card mb-3 border" style="max-width: 18rem;">
+                                      <div class="card-header text-white bg-danger">MAH Token Requestor<i class="ti-reload float-right m-t-5"></i></div>
+                                      <div class="card-body">
+                                        <h5 class="card-title text-danger"><i class="fa fa-times-circle m-r-5 m-l-5"></i>Expired</h5>
+                                        <p class="card-text ">Date: 08/11/2019 
+                                            <i class="fa fa-envelope float-right m-t-5"></i>
+                                          <a class="float-right m-r-5" href="#" (click)="open(content, 'MAH Token Requestor')">View more</a>
+                                        </p>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="col-3">
+                                  <div class="card mb-3 border" style="max-width: 18rem;">
+                                      <div class="card-header text-white bg-warning">VAP Image SVC<i class="ti-reload float-right m-t-5"></i></div>
+                                      <div class="card-body">
+                                        <h5 class="card-title text-warning"><i class="fa fa-exclamation-circle m-r-5 m-l-5"></i>Warning</h5>
+                                        <p class="card-text ">Date: 10/11/2021 <a class="float-right" href="#" (click)="open(content, 'VAP Image SVC')">View more</a></p>
+                                      </div>
+                                    </div>
+                              </div>
+                          </div>
+                    </ng-template>
+                  </ngb-tab>
+                </ngb-tabset>
+                    <a href="#" class="btn  btn-success float-right"><i class="ti-export m-r-5 m-l-5"></i> Export Errors</a>
+                    <a href="#" class="btn  btn-success float-right m-r-20"><i class="fa fa-envelope m-r-5 m-l-5"></i> Mail Errors</a>
+           
+            </div>
+        </div>
+    </div>
+</div>
